@@ -1,0 +1,203 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #A8BCFF;
+  }
+  
+  .dashboard {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 200px;
+    color: #000000;
+    padding-top: 20px;
+    padding-left: 15px;
+    position: fixed;
+  }
+   
+  .logo {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+   
+  .logo-img {
+    width: 100px;
+    /* Adjust logo size */
+    height: auto;
+    transition: width 0.3s ease;
+  }
+   
+  .sidebar.hide .logo-img {
+    width: 40px;
+    /* Shrink the logo when the sidebar is collapsed */
+  }
+   
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+   
+  .sidebar li {
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    transition: background 0.3s, transform 0.3s;
+    font-family: 'Calibri', sans-serif;
+    background: #D4E2FF;
+    font-size: large;
+    text-transform: uppercase;
+  }
+   
+  .sidebar li:hover {
+    transform: scale(1.1);
+    background-color: #4A83FF;
+  }
+   
+  .sidebar li.active {
+    background: #4A83FF;
+    color: white;
+    font-weight: bold;
+  }
+   
+  .sidebar li .fas {
+    margin-right: 20px;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+  }
+   
+  .sidebar li .item-text {
+    margin-left: -20px;
+  }
+   
+  .sidebar.hide {
+    width: 50px;
+  }
+   
+  .sidebar.hide li {
+    justify-content: center;
+    border-radius: 20px;
+  }
+   
+  .sidebar.hide li .fas {
+    font-size: 20px;
+    transform: scale(1.2);
+    padding-left: 15px;
+  }
+   
+  .sidebar.hide li .item-text {
+    display: none;
+  }
+   
+  /* Button to toggle the sidebar */
+  .toggle-btn {
+    color: rgb(0, 0, 0);
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: -20px;
+    background-color: transparent;
+  }
+   
+  .toggle-btn:hover {
+    color: black;
+    transform: scale(1.5);
+  }
+   
+  .toggle-btn:focus {
+    outline: none;
+  }
+ 
+  
+  .main-content {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+  }
+  
+  .header h2 {
+    margin-bottom: 5px;
+    font-size: 30px;
+  }
+  
+  .overview-cards {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: white;
+    padding: 20px;
+    flex: 1;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .card.revenue { background: #ffe2e2; }
+  .card.orders { background: #e2f0ff; }
+  .card.customers { background: #e2ffe9; }
+  
+  .analytics {
+    display: flex;
+    margin-top: 30px;
+    gap: 20px;
+  }
+  
+  .chart {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+  }
+  
+  .stats {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .stat {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+  }
+
+  .chart {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    height: 500px;
+  }
+  
+  .chart canvas {
+    height: 80% !important; 
+    width: 90% !important;
+  }
+  .growth {
+    color: green;
+    font-weight: bold;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  
+  

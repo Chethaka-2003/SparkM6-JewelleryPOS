@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POS Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard">
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <button id="toggleBtn" class="toggle-btn"><i class="fas fa-arrow-left"></i></button>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="https://via.placeholder.com/100" alt="Logo" class="logo-img">
+    </div>
+
+    <ul>
+      <li class='active'><i class="fas fa-tachometer-alt"></i><span class="item-text">Dashboard</span></li>
+      <li><i class="fas fa-cash-register"></i><span class="item-text">POS</span></li>
+      <li><i class="fas fa-chart-line"></i><span class="item-text">Sales</span></li>
+      <li><i class="fas fa-file-invoice-dollar"></i><span class="item-text">Accounting</span></li>
+      <li><i class="fas fa-shopping-cart"></i><span class="item-text">Purchase</span></li>
+      <li><i class="fas fa-users"></i><span class="item-text">Customers & HR</span></li>
+      <li><i class="fas fa-money-check-alt"></i><span class="item-text">Payroll</span></li>
+      <li><i class="fas fa-chart-pie"></i><span class="item-text">Reports</span></li>
+      <li><i class="fas fa-cog"></i><span class="item-text">Settings</span></li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <header class="header">
+      <h2>👋 Welcome</h2>
+      <p>Here's what's happening in your store.</p>
+    </header>
+
+    <section class="overview-cards">
+      <div class="card revenue">
+        <h3 style="font-size: 50px;">$85,500</h3>
+        <p><i class="fas fa-coins" style="color: orange;"></i> Total Revenue</p>
+      </div>
+      <div class="card orders">
+        <h3 style="font-size: 50px;">1000</h3>
+        <p><i class="fas fa-receipt" style="color: purple;"></i> Total Orders</p>
+      </div>
+      <div class="card customers">
+        <h3 style="font-size: 50px;">300</h3>
+        <p><i class="fas fa-user-friends" style="color: teal;"></i> Total Customers</p>
+      </div>
+    </section>
+
+    <section class="analytics">
+      <div class="chart">
+        <h3><i class="fas fa-chart-area" style="color: orange;"></i> Orders Overview</h3>
+        <canvas id="ordersChart"></canvas>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+            <h4 style="font-size: 30px;"><i class="fas fa-shopping-basket" style="color: green;"></i> Sales</h4>
+            
+            <div class="sales-numbers">
+              <div><b>9,600</b> <span>This Month</span></div>
+              <div><b>9,500</b> <span>Last Month</span></div>
+            </div>
+            <br>
+            <p class="growth">
+              <i class="fas fa-chart-line" style="color: green;"></i> 15% Increase
+            </p>
+          </div>
+          
+        <div class="stat">
+          <h4><i class="fas fa-database" style="color: blue;"></i> Sale Analytics</h4>
+          <canvas id="salesPieChart" width="150" height="150"></canvas> 
+        </div>
+        <div class="stat">
+          <h4><i class="fas fa-star" style="color: gold;"></i> Top Products</h4>
+          <ul>
+            <li>📦 Product 1</li>
+            <li>📦 Product 2</li>
+            <li>📦 Product 3</li>
+            <li>📦 Product 4</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
