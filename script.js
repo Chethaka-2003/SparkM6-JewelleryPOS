@@ -74,3 +74,63 @@ toggleBtn.addEventListener('click', function() {
     ? '<i class="fas fa-arrow-right"></i>'
     : '<i class="fas fa-arrow-left"></i>';
 });
+
+function updateTime() {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-GB', { year: 'numeric', month: 'short', day: 'numeric' });
+    const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    document.getElementById('datetime').textContent = `${dateStr} ${timeStr}`;
+}
+setInterval(updateTime, 1000);
+updateTime();
+
+function updateTime() {
+    const now = new Date();
+
+    // Format time
+    const hours = now.getHours();
+    const isDay = hours >= 6 && hours < 18;
+
+    const timeStr = now.toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+    });
+
+    const dateStr = now.toLocaleDateString('en-GB', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        weekday: 'long'
+    });
+
+    const timeCard = document.getElementById('timeCard');
+    const clockTime = document.getElementById('clock-time');
+    const clockAMPM = document.getElementById('clock-ampm');
+    const dayText = document.getElementById('dayText');
+    const skyIcon = document.getElementById('skyIcon');
+
+    // Update text
+    const [time, ampm] = timeStr.split(' ');
+    clockTime.textContent = time;
+    clockAMPM.textContent = ampm;
+    dayText.textContent = dateStr;
+    document.getElementById('datetime').textContent = `${dateStr} ${timeStr}`;
+
+    // Update card theme
+    if (isDay) {
+        timeCard.classList.add('day');
+        timeCard.classList.remove('night');
+        skyIcon.textContent = '☀️';
+    } else {
+        timeCard.classList.add('night');
+        timeCard.classList.remove('day');
+        skyIcon.textContent = '🌙';
+    }
+}
+
+setInterval(updateTime, 1000);
+updateTime();
+
+
