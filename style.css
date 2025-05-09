@@ -51,7 +51,7 @@ body {
     gap: 18px;
     transition: background 0.3s, transform 0.3s;
     font-family: 'Calibri', sans-serif;
-    background: rgba(30, 170, 231, 0.5);
+    background: rgba(162, 221, 246, 0.5);
     color: black;
     font-size: large;
     text-transform: uppercase;
